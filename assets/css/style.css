@@ -1,0 +1,22 @@
+body, html{
+   width: 100%;
+   height: 100%;
+   /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2yrpK7nuBcrgpU1hJlnCXrMkQKfWvi1cEAWrq0LIGpma4_es"); */
+
+   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmZdK4R0KWF7fr2dnCZ47LpKtV40mAmV5rLyJXOk8Fa_F4sU2txg");
+
+   
+}
+
+.container{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmZdK4R0KWF7fr2dnCZ47LpKtV40mAmV5rLyJXOk8Fa_F4sU2txg");
+    text-align: center;
+    padding: 25px;
+} 
+
+#question{
+    background-color: pink;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
