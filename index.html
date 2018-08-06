@@ -5,6 +5,7 @@
     <title>
         Trivia Game
     </title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -22,31 +23,74 @@
 </head>
 
 <body>
-    <div class="container">
-        <div>
-            <h1 style="color: beige">Totally trivial Trivia!!</h1>
+
+    <!-- page one contents -->
+    <div class="container " id="startBtn">
+        <div class="firstPage">
+            <div class="row row1">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <h1>Totally trivial Trivia!!</h1>
+                </div>
+                <div class="col-md-2" 4>
+                </div>
+            </div>
+
+            <div class="row row1">
+                <div class="col-md-5">
+                </div>
+                <div class="col-md-2">
+                    <button id="start" class="btn btnStyle" onClick="show();">Start Quiz</button>
+                </div>
+                <div class="col-md-5">
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- page one contents ends -->
+
+    <!-- Page two/quiz page contents starts  -->
+    <div class="container" id="questions" style="display:none">
+        <!-- Heading content starts here -->
+        <div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-4">Totally trivial Trivia!!</h1>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+        <!-- quiz starts here -->
+        <div  id="question">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <p style="margin-top: 20px">
+                        Total time remaining
+                        <span id="display"> 00:30</span>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+        <!-- <div id="question">
+        </div> -->
+        <!-- <div id="displayResult">
+        </div> -->
 
         <div>
-            <p id="question">
-                Total time remaining<span id="display">   00:30</span>
-            </p>
-        </div>
-        <div>
-            <button id="start" onClick="this.style.visibility= 'hidden'">Start</button>
-        </div>
-        <div id="question">
-        </div>
-        <div id="displayResult">
-        </div>
-        <div>
-           
             <!-- Modal content-->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content" style="background:black">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Score Card!!</h5>
+                            <h3 class="modal-title" id="exampleModalLongTitle">Score Card!!</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -57,14 +101,14 @@
                         </div>
                         <!-- Modal Footer -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Restart Quiz</button>
+                            <button type="button" class="btn btn-lg " style="background: orangered" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
 

@@ -98,6 +98,8 @@ $("#start").on("click", function () {
     displayQuiz();
 });
 
+//displayQuiz();
+
 // Onclick event to submit the quiz
 $("#submit").on("click", function () {
     correctAnswer = 0;
@@ -128,6 +130,7 @@ function displayQuiz() {
 
 
     }
+
     showButton();
 }
 
@@ -171,12 +174,19 @@ function showButton() {
     submit.attr("data-toggle", "modal");
     submit.attr("data-target", "#exampleModalCenter");
     submit.attr("id", "submit");
-    submit.addClass("btn");
+    submit.addClass("btn btn-success");
     submit.text("Submit Quiz");
-    submit.attr("style", "background:orangered; align: center;");
     var btndiv = $("<div>");
     $('#question').append(submit);
+
+    //     <button type="button" class="btn btn-success" id="submit" onClick="this.style.visibility= 'hidden'" data-toggle="modal" data-target="#exampleModalCenter">
+    //     Submit Quiz
+    // </button>
 }
+
+// Code for stopwatch 
+//
+//
 
 window.onload = function () {
     $("#stop").on("click", stopwatch.stop);
@@ -195,9 +205,17 @@ var stopwatch = {
 
     time: 30,
 
+    // reset: function () {
+
+    //     stopwatch.time = 0;
+
+    //     // DONE: Change the "display" div to "00:00."
+    //     $("#display").text("00:00");
+    // },
+
     start: function () {
 
-        // SetInterval to start the count here and set the clock to running.
+        // DONE: Use setInterval to start the count here and set the clock to running.
         if (!clockRunning) {
             intervalId = setInterval(stopwatch.count, 1000);
             clockRunning = true;
@@ -205,21 +223,21 @@ var stopwatch = {
     },
     stop: function () {
 
-        // ClearInterval to stop the count here and set the clock to not be running.
+        // DONE: Use clearInterval to stop the count here and set the clock to not be running.
         clearInterval(intervalId);
         clockRunning = false;
     },
     count: function () {
 
-        // Increment time by 1.
+        // DONE: increment time by 1, remember we cant use "this" here.
         stopwatch.time--;
 
-        // The current time, passed  into the stopwatch.timeConverter function,
-        // and save the result in a variable.
+        // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
+        //       and save the result in a variable.
         var converted = stopwatch.timeConverter(stopwatch.time);
         console.log(converted);
 
-        // The variable created to show the converted time in the "display" div.
+        //  Use the variable we just created to show the converted time in the "display" div.
         $("#display").text(" " + converted);
 
         if (stopwatch.time === 0) {

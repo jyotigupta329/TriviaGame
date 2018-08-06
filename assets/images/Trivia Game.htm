@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)file:///Users/jyoti/TriviaGame/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>
+        Trivia Game
+    </title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <!-- Added link to the jQuery Library -->
+    <script src="./Trivia Game_files/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="./Trivia Game_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Added a link to css -->
+    <script src="./Trivia Game_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./Trivia Game_files/style.css">
+
+</head>
+
+<body>
+
+    <!-- page one contents -->
+    <div class="container" style:="" "color:="" black"="" id="startBtn">
+        <div>
+            <div class="row">
+                <h1 style="color: black">Totally trivial Trivia!!</h1>
+            </div>
+            <div class="row">
+                <button id="start" class="btn startStyle" onclick="show();">Start</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- quiz page contents  -->
+    <div class="container" id="questions" style="display:none">
+        <!-- <div>
+            <h1 style="color: beige">Totally trivial Trivia!!</h1>
+        </div> -->
+        <h1 class="display-4">Totally trivial Trivia!!</h1>
+        <div>
+            <p id="question">
+                Total time remaining
+                <span id="display"> 00:30</span>
+            </p>
+        </div>
+        <!-- button to start quiz -->
+        <!-- <div>
+            <button id="start" onClick="this.style.visibility= 'hidden'">Start</button>
+        </div> -->
+        <div id="question">
+        </div>
+        <div id="displayResult">
+        </div>
+        <div>
+
+            <!-- Modal content-->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background:black">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Score Card!!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body" id="score">
+
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Restart Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div id="Page2" style="display:none">
+        Content of page 2
+        <a href="#" onclick="return show('Page1','Page2');" style="color: azure">Show page 1</a>
+    </div> -->
+
+    <script type="text/javascript" src="./Trivia Game_files/app.js"></script>
+
+
+</body></html>
