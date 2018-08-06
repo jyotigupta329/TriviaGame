@@ -1,6 +1,6 @@
 var triviaGame = [
     {
-        question: "Inside which HTML element do we put the JavaScript?",
+        question: "Inside which HTML element do we put the JavaScript ?",
         answers: {
             a: "script",
             b: "js",
@@ -9,16 +9,16 @@ var triviaGame = [
         correctAnswer: "a"
     },
     {
-        question: " Where is the correct place to insert a JavaScript?",
+        question: " Where is the correct place to insert a JavaScript ?",
         answers: {
             a: "head section",
             b: "body section",
             c: "Both",
         },
-        correctAnswer: "b"
+        correctAnswer: "c"
     },
     {
-        question: "What is the correct syntax for referring to an external script called xxx.js",
+        question: "What is the correct syntax for referring to an external script called xxx.js ?",
         answers: {
             a: "script href='xxx.js'",
             b: "script src='xxx.js'",
@@ -26,7 +26,7 @@ var triviaGame = [
         },
         correctAnswer: "b"
     }, {
-        question: " jQuery uses CSS selectors to select elements?",
+        question: " jQuery uses CSS selectors to select elements ?",
         answers: {
             a: "false",
             b: "true",
@@ -34,7 +34,7 @@ var triviaGame = [
         correctAnswer: "a"
     },
     {
-        question: "Which sign does jQuery use as a shortcut for jQuery?",
+        question: "Which sign does jQuery use as a shortcut for jQuery ?",
         answers: {
             a: "the ? Sign",
             b: "the $ sign",
@@ -43,7 +43,7 @@ var triviaGame = [
         correctAnswer: "b"
     },
     {
-        question: "Is jQuery a library for client scripting or server scripting",
+        question: "Is jQuery a library for client scripting or server scripting ?",
         answers: {
             a: "Server scripting",
             b: "Client scripting"
@@ -51,7 +51,7 @@ var triviaGame = [
         correctAnswer: "b"
     },
     {
-        question: "Is it possible to use jQuery together with AJAX?",
+        question: "Is it possible to use jQuery together with AJAX ?",
         answers: {
             a: "yes",
             b: "no"
@@ -59,7 +59,7 @@ var triviaGame = [
         correctAnswer: "a"
     },
     {
-        question: "The jQuery html() method works for both HTML and XML documents",
+        question: "The jQuery html() method works for both HTML and XML documents ?",
         answers: {
             a: "false",
             b: "true"
@@ -67,14 +67,14 @@ var triviaGame = [
         correctAnswer: "a"
     },
     {
-        question: " Which jQuery method is used to hide selected elements?",
+        question: " Which jQuery method is used to hide selected elements ?",
         answers: {
             a: "visible(false)",
             b: "hide()",
             c: " hidden()",
             d: " display(none)",
         },
-        correctAnswer: "d"
+        correctAnswer: "b"
     },
     {
         question: "Which jQuery method is used to set one or more style properties for selected elements?",
@@ -109,6 +109,7 @@ $("#submit").on("click", function () {
 // To display the quiz
 
 function displayQuiz() {
+    $('#question').append($('<div><p style="margin-top: 20px"> Total time remaining<span id="display"> 00:30</span></p></div>'));
     var question = $('#question').attr('id');
     for (var i = 1; i <= triviaGame.length; i++) {
         var ansRadio = '';
@@ -194,6 +195,12 @@ var clockRunning = false;
 var stopwatch = {
 
     time: 30,
+    reset: function () {
+
+        stopwatch.time = 0;
+        // Change the "display" div to "00:00."
+        $("#display").text("00:00");
+    },
 
     start: function () {
 
@@ -254,6 +261,7 @@ $(document).on("click", "#submit", function () {
     unAnswered = 0;
     stopwatch.stop();
     checkAnswer();
+
 });
 
 function show() {
@@ -261,3 +269,6 @@ function show() {
     $('#questions').show();
 }
 
+$('#resetQuiz').click(function() {
+    location.reload();
+});
